@@ -1,0 +1,357 @@
+
+===  G I T  ===
+
+.) git clone 
+     git clone git://github.com/square/java-apns.git
+     git clone https://github.com/gitdivide/bookstore.git
+
+.) tag (http://git-scm.com/book/en/v2/Git-Basics-Tagging)
+     git tag -a v0.1.2 -m 'tag 0.1.2'
+     git push origin v0.1.2
+     git checkout tags/v0.1.2
+     git checkout master
+
+.) kind of info
+     git remote show origin
+     git remote -v
+
+.) revert uncommitted changes
+    .) revert single file
+	git checkout -- filename
+    .) revert all files
+	git reset --hard
+    .) revert git submodules
+	git submodule update --init
+
+.) revert local commits 
+    .) moves the current branch backward by two commits
+      git reset HEAD~2
+
+.) remove all files added since last commit
+     git clean -fd
+
+.) numeric versioning
+
+  .) git rev-list HEAD --count
+  -) http://programmers.stackexchange.com/questions/141973/how-do-you-achieve-a-numeric-versioning-scheme-with-git
+  Use tags to mark commits with version numbers:
+    .) git tag -a v2.5 -m 'Version 2.5'
+  Push tags upstream—this is not done by default:
+    .) git push --tags
+  Then use the describe command:
+    .) git describe --tags --long
+  This gives you a string of the format:
+    .) v2.5-0-deadbeef
+    .) v2.5 - last tag
+    .) 0 - number of commits since last tag
+    .) deadbeef - SHA of HEAD
+
+
+
+===  S V N  ===
+
+ 1. CREATE TAG
+    svn copy http://subversion/project/trunk \
+         http://subversion/project/tags/project-0.0.2 \
+         -m "Tagging the -r xx version as the X.X.X release"
+
+ 2. ROLL BACK TO VERSION 15898
+    svn merge -r HEAD:15898 http://subversion/svn/project/trunk .
+
+ 2.1 ROLL BACK TO A VERSION
+    svn merge -rXX:YY (YY is the number of the revision you want to revert to)
+
+ 3. MERGE FROM TRUNK TO BRANCH
+      Merge in the current directory changes that occurred in the trunk from 
+      revision 15933 to 16026 
+        svn merge http://subversion/svn/project/trunk -r15933:16026 .
+
+ 4. IGNORE files(as in svn status)
+    on 'svn status' ignore these files
+    4.1) Create file ("a_file") with file patterns svn to ignore.
+    4.2) Then run the command,
+        svn propset svn:ignore . -F file_name
+        4.2.1) recursive
+            svn -R propset svn:ignore . -F file_name
+    4.3) Should you need to edit these properties, use the following command.
+        svn propedit svn:ignore .
+
+ 5. SVN DIFF
+    'svn diff --diff-cmd diff -x -uw /path/to/file'
+
+ 6. SVN EDITOR
+    export SVN_EDITOR=vi
+
+ 7. CREATE SVN PROJECT
+  mkdir to_show
+  cd to_show
+  mkdir my_project
+  cd my_project
+  mkdir trunk tags branches
+  cd trunk
+  mkdir my_module
+  cd ../..
+  ls -l 
+  my_project
+  svn import my_project http://subversion/my_project -m "First Import"
+
+ 8. svn copy http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
+
+ 9. svn move http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
+
+10. non recursive checkout
+    svn checkout --non-recursive http://svnserver/trunk/ proj
+
+11. Check modifications on server
+    svn st -u
+
+12. Show annotations (aka blame)
+    svn blame file_name
+
+13. Setting svn mime type to text
+    svn propset svn:mime-type text/plain pom.xml
+
+
+===  L I N U X  ===
+.) search and replace
+     sed -i -e 's/string1/string2/g'
+
+.) recursive search and replace
+     grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'
+
+.) delete recursive svn folder
+     #!/bin/sh
+     echo "recursively removing .svn folders from"
+     pwd
+     rm -rf `find . -type d -name .svn`
+
+.) search for a file with find
+     find -iname \*lerts-properties-service.xml
+     find -iname \*lerts\*
+
+.) script to rename a directory
+
+     #! /bin/bash
+     # replace directory 'com' with 'org'
+     # Search and rename directories.
+
+     for filename in `find . -type d -name com`          #Traverse all files in directory.
+     do
+         fname=$filename                                 # Yes, this filename needs work.
+         n=`echo $fname | sed -e "s/com/org/g"`          # Substitute 
+         mv "$fname" "$n"                                # Do the actual renaming.
+     done   
+     
+
+.) List The Open Ports And The Process That Owns Them
+
+    sudo lsof -i
+..) id using port 8080 (tcp)
+    sudo lsof -i TCP:8080
+    sudo netstat -lptu
+
+.) tail -f server/default/log/server.log | awk '{print $2"\t"$4}'
+
+.) format json
+    python -mjson.tool j.txt
+
+.) xml formating
+    xmllint --format pom.xml > a.xml
+    xmllint utility comes with libxml2-utils 
+
+.) curl (http://blogs.plexibus.com/2009/01/15/rest-esting-with-curl)
+
+    -) POST
+        curl -i -H "Accept: application/json" -X POST -d "firstName=james" http://192.168.0.165/persons/person
+
+	where,
+	i - show response headers
+	H - pass request headers to the resource
+	X - pass a HTTP method name
+	d - pass in parameters enclosed in quotes; multiple parameters are separated by '&'
+            
+	The above command posts the first name "james" to the persons resource. Assuming the server creates a new person resource with first name of James, I also 
+	tell the server to return a json representation of the newly created resource.
+
+        to send a file
+        curl --header "content-type: text/xml" -d @request.xml http://localhost:8080/ws
+
+    -) GET
+        curl -i -H "Accept: application/json" http://192.168.0.165/persons/person/1  
+
+    -) PUT
+        curl -i -H "Accept: application/json" -X PUT -d "phone=1-800-999-9999" http://192.168.0.165/persons/person/1
+
+    -) DELETE
+        curl -i -H "Accept: application/json" -X DELETE http://192.168.0.165/persons/person/1
+
+.)  random shuffle a file
+    shuf < inputfile > outputfile 
+    sort -R > randomsortedfile 
+
+
+===  W I L D F L Y  ===
+.) start on a different port
+./bin/standalone.sh -Djboss.socket.binding.port-offset=1000
+
+=== M A V E N  ===
+
+
+.) display dependencies with newer versions available. (mojohaus.org/versions-maven-plugin)
+     mvn versions:display-dependency-updates
+
+.) maven.apache.org/plugins/maven-dependency-plugin
+     mvn dependency:tree
+     mvn dependency:analyze
+
+.) sort the sections of a pom.xml into the canonical order.(mojohaus.org/tidy-maven-plugin)
+     mvn tidy:pom
+
+.) mojohaus.org/exec-maven-plugin
+     mvn exec:java -Dexec.mainClass=org.test.Main
+
+
+mvn site:site
+mvn assembly:assembly
+mvn install -DskipTests
+mvn -Dwtpversion=2.0 eclipse:eclipse
+mvn eclipse:eclipse
+mvn eclipse:clean eclipse:eclipse -DdownloadSources=true
+mvn eclipse:clean
+mvn --dryRun release:prepare
+mvn release:clean
+mvn release:prepare
+
+
+=== WEBDAV ===
+
+cadaver https://demo.org/repository/experimental/org/demo/tns
+konqueror webdavs://demo.org/repository/experimental/org/demo/tns/
+
+
+      
+=== LOG4J ===
+   www.javaworld.com/jw-11-2000/jw-1122-log4j.html
+
+The root category defaults to DEBUG, and following config are equivalent:
+  <root>
+    <appender-ref ref="FILE"/>
+  </root>
+
+and
+
+  <root>
+    <priority value="DEBUG" />
+    <appender-ref ref="FILE"/>
+  </root>
+
+If no category specified for a package/class it will inherit root category. 
+For example, messages with priority DEBUG or higher will be sent ot the 
+FILE appender.(The FILE appender will discard messages with priority lower 
+than ERROR)
+...
+    <appender name="FILE" ...
+         ...
+        <param name="Threshold" value="ERROR"/>
+        ...
+    </appender>
+    <root>
+        <priority value="DEBUG" />
+        <appender-ref ref="FILE"/>
+    </root>
+   ...
+
+Package org.apache category set to(restricted to) INFO, all other categories are
+inheriting the root category (WARN).
+FILE appender discards messages with priority LOWER than ERROR.
+...
+    <appender name="FILE" ...
+         ...
+        <param name="Threshold" value="ERROR"/>
+        ...
+    </appender>
+
+    <category name="org.apache">
+        <priority value="INFO"/>
+    </category>
+
+    <root>
+        <priority value="WARN" />
+        <appender-ref ref="FILE"/>
+    </root>
+   ...
+
+
+===  S O L A R I S  ===
+http://www.unixguide.net/sun/sunoneliners.shtml
+
+Grep
+ /usr/local/bin/grep
+ or
+ /usr/sfw/bin/ggrep
+
+ - recursive grep
+   find . | xargs grep 'Your Grep Value' 
+
+ - find file
+   find /opt/tibco/ -name "*tibe*"
+
+Tar
+ tar cvf - /home/ebs | gzip - > ebs.tar.gz 
+ gtar xzvf somefile.tar.gz
+
+Resource statistics for each thread of a server application. 
+ prstat -L -p 3295
+
+
+=== T E C H N O  ===
+   http://gafter.blogspot.com/2008/01/is-java-dying.html
+
+Reflecting generics
+   http://www.artima.com/weblogs/viewpost.jsp?thread=208860
+   
+Generics erasure
+   http://gafter.blogspot.com/2004/09/puzzling-through-erasure-answer.html   
+   
+Super Type Tokens
+   http://www.artima.com/weblogs/viewpost.jsp?thread=206350 
+   http://gafter.blogspot.com/2006/12/super-type-tokens.html  
+
+Factories with Generics
+   www.developerdotstar.com/mag/articles/troche_factorychain.html
+
+Guidelines for using volatile variables
+   www.ibm.com/developerworks/java/library/j-jtp06197.html
+
+Threads
+   www.briangoetz.com/pubs.html
+   www.baptiste-wicht.com/2010/08/java-concurrency-part-4-semaphores
+   tutorials.jenkov.com/java-concurrency/index.html
+   www.artima.com/insidejvm/ed2/jvm2.html
+
+Stack and heap
+   http://www.javatutorialhub.com/java-stack-heap.html
+
+ThreadLocal
+   www.ibm.com/developerworks/java/library/j-threads3.html
+
+Understanding Java Multithreading and Read-Write Locks
+   www.developer.com/java/article.php/951051
+
+@XmlRootElement
+   weblogs.java.net/blog/kohsuke/archive/2006/03/why_does_jaxb_p.html
+   jsexton0.blogspot.com/2009/02/marshalling-and-unmarshalling-without.html
+
+http://jaxb.java.net/guide/Customizing_Java_packages.html
+
+Generate an XML Document from an Object Model with JAXB 2
+   www.devx.com/Java/Article/34069/1763/page/3
+
+Fork and Join, Parallel Programming
+    http://www.oracle.com/technetwork/articles/java/fork-join-422606.html
+
+OpenMQ
+    http://mq.java.net
+
+Apache Qpid (Advanced Message Queueing Protocol)
+    http://qpid.apache.org/
