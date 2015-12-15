@@ -17,11 +17,11 @@
 
 .) revert uncommitted changes
     .) revert single file
-	git checkout -- filename
+        git checkout -- filename
     .) revert all files
-	git reset --hard
+        git reset --hard
     .) revert git submodules
-	git submodule update --init
+        git submodule update --init
 
 .) revert local commits 
     .) moves the current branch backward by two commits
@@ -50,39 +50,39 @@
 
 ===  S V N  ===
 
- 1. CREATE TAG
+ .) CREATE TAG
     svn copy http://subversion/project/trunk \
          http://subversion/project/tags/project-0.0.2 \
          -m "Tagging the -r xx version as the X.X.X release"
 
- 2. ROLL BACK TO VERSION 15898
+ .) ROLL BACK TO VERSION 15898
     svn merge -r HEAD:15898 http://subversion/svn/project/trunk .
 
- 2.1 ROLL BACK TO A VERSION
+ .) ROLL BACK TO A VERSION
     svn merge -rXX:YY (YY is the number of the revision you want to revert to)
 
- 3. MERGE FROM TRUNK TO BRANCH
+ .) MERGE FROM TRUNK TO BRANCH
       Merge in the current directory changes that occurred in the trunk from 
       revision 15933 to 16026 
         svn merge http://subversion/svn/project/trunk -r15933:16026 .
 
- 4. IGNORE files(as in svn status)
+.) IGNORE files(as in svn status)
     on 'svn status' ignore these files
-    4.1) Create file ("a_file") with file patterns svn to ignore.
-    4.2) Then run the command,
+    ..) Create file ("a_file") with file patterns svn to ignore.
+    ..) Then run the command,
         svn propset svn:ignore . -F file_name
-        4.2.1) recursive
+        ...) recursive
             svn -R propset svn:ignore . -F file_name
-    4.3) Should you need to edit these properties, use the following command.
+    ..) Should you need to edit these properties, use the following command.
         svn propedit svn:ignore .
 
- 5. SVN DIFF
+.) SVN DIFF
     'svn diff --diff-cmd diff -x -uw /path/to/file'
 
- 6. SVN EDITOR
+.) SVN EDITOR
     export SVN_EDITOR=vi
 
- 7. CREATE SVN PROJECT
+.) CREATE SVN PROJECT
   mkdir to_show
   cd to_show
   mkdir my_project
@@ -95,20 +95,20 @@
   my_project
   svn import my_project http://subversion/my_project -m "First Import"
 
- 8. svn copy http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
+.) svn copy http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
 
- 9. svn move http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
+.) svn move http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
 
-10. non recursive checkout
+.) non recursive checkout
     svn checkout --non-recursive http://svnserver/trunk/ proj
 
-11. Check modifications on server
+.) Check modifications on server
     svn st -u
 
-12. Show annotations (aka blame)
+.) Show annotations (aka blame)
     svn blame file_name
 
-13. Setting svn mime type to text
+.) Setting svn mime type to text
     svn propset svn:mime-type text/plain pom.xml
 
 
@@ -164,17 +164,17 @@
     -) POST
         curl -i -H "Accept: application/json" -X POST -d "firstName=james" http://192.168.0.165/persons/person
 
-	where,
-	i - show response headers
-	H - pass request headers to the resource
-	X - pass a HTTP method name
-	d - pass in parameters enclosed in quotes; multiple parameters are separated by '&'
+        where,
+        i - show response headers
+        H - pass request headers to the resource
+        X - pass a HTTP method name
+        d - pass in parameters enclosed in quotes; multiple parameters are separated by '&'
             
-	The above command posts the first name "james" to the persons resource. Assuming the server creates a new person resource with first name of James, I also 
-	tell the server to return a json representation of the newly created resource.
+        The above command posts the first name "james" to the persons resource. Assuming the server creates a new person resource with first name of James, I also 
+        tell the server to return a json representation of the newly created resource.
 
-        to send a file
-        curl --header "content-type: text/xml" -d @request.xml http://localhost:8080/ws
+        To send a file
+          curl --header "content-type: text/xml" -d @request.xml http://localhost:8080/ws
 
     -) GET
         curl -i -H "Accept: application/json" http://192.168.0.165/persons/person/1  
@@ -185,7 +185,7 @@
     -) DELETE
         curl -i -H "Accept: application/json" -X DELETE http://192.168.0.165/persons/person/1
 
-.)  random shuffle a file
+.) Random shuffle a file
     shuf < inputfile > outputfile 
     sort -R > randomsortedfile 
 
