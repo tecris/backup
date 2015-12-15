@@ -199,6 +199,7 @@
 
 .) display dependencies with newer versions available. (mojohaus.org/versions-maven-plugin)
      mvn versions:display-dependency-updates
+     mvn versions:use-latest-versions
 
 .) maven.apache.org/plugins/maven-dependency-plugin
      mvn dependency:tree
