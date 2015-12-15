@@ -196,17 +196,21 @@
 
 === M A V E N  ===
 
+.) Versions plugin. (mojohaus.org/versions-maven-plugin)
+     ..) display dependencies with newer versions available.
+           mvn versions:display-dependency-updates
+     ..) Replaces any version with the latest version.
+           mvn versions:use-latest-versions
+     ..) Sets properties to the latest versions of specific artifacts.
+           mvn versions:update-properties
 
-.) display dependencies with newer versions available. (mojohaus.org/versions-maven-plugin)
-     mvn versions:display-dependency-updates
-     mvn versions:use-latest-versions
-
-.) maven.apache.org/plugins/maven-dependency-plugin
+.) Dependency plugin (maven.apache.org/plugins/maven-dependency-plugin)
      mvn dependency:tree
      mvn dependency:analyze
 
-.) sort the sections of a pom.xml into the canonical order.(mojohaus.org/tidy-maven-plugin)
-     mvn tidy:pom
+.) Tidy Maven Plugin. Sort the sections of a pom.xml into the canonical order..(mojohaus.org/tidy-maven-plugin)
+     ..) Sort the sections of a pom.xml into the canonical order.
+           mvn tidy:pom
 
 .) mojohaus.org/exec-maven-plugin
      mvn exec:java -Dexec.mainClass=org.test.Main
