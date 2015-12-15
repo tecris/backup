@@ -206,8 +206,20 @@
 .) mojohaus.org/exec-maven-plugin
      mvn exec:java -Dexec.mainClass=org.test.Main
      
-.) simple archetype
-    mvn archetype:generate -DgroupId=org.demo.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+.) archetype (maven-repository.com/archetypes)
+    mvn archetype:generate \
+      -DgroupId=org.demo.app \
+      -DartifactId=quickstart \
+      -DarchetypeArtifactId=maven-archetype-quickstart \
+      -DinteractiveMode=false
+      
+    mvn archetype:generate \
+      -DgroupId=org.demo.app \
+      -DartifactId=wildfly-html5 \
+      -DarchetypeGroupId=org.wildfly.archetype \
+      -DarchetypeArtifactId=wildfly-html5-mobile-archetype \
+      -DarchetypeVersion=8.2.0.Final \
+      -DinteractiveMode=false
 
 .) other
      mvn site:site
