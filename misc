@@ -207,7 +207,7 @@
      mvn exec:java -Dexec.mainClass=org.test.Main
      
 .) simple archetype
-    mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+    mvn archetype:generate -DgroupId=org.demo.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
 .) other
      mvn site:site
