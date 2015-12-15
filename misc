@@ -59,7 +59,7 @@
      mvn dependency:tree
      mvn dependency:analyze
 
-.) Tidy Maven Plugin. Sort the sections of a pom.xml into the canonical order..(mojohaus.org/tidy-maven-plugin)
+.) Tidy Maven Plugin.(mojohaus.org/tidy-maven-plugin)
      ..) Sort the sections of a pom.xml into the canonical order.
            mvn tidy:pom
 
