@@ -10,6 +10,12 @@
      git checkout tags/v0.1.2
      git checkout master
 
+.) show last commit
+     git show
+
+.) compare changes for a file between revisions:
+    git diff revision_1 revision_2 -- File_name
+
 .) kind of info
      git remote show origin
      git remote -v
