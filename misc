@@ -88,6 +88,9 @@
       -DarchetypeVersion=8.2.0.Final \
       -DinteractiveMode=false
 
+.) help for a plugin
+    mvn help:describe -DgroupId=org.flywaydb -DartifactId=flyway-maven-plugin -Dversion=3.2.1 -Dfull=true
+
 .) other
      mvn site:site
      mvn assembly:assembly
