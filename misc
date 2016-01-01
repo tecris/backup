@@ -203,6 +203,19 @@
     sudo lsof -i TCP:8080
     sudo netstat -lptu
 
+.) Script to check if port open
+-------------------------------------------------
+#/bin/bash
+SERVER=127.0.0.1 PORT=5000
+if (: < /dev/tcp/$SERVER/$PORT) 2>/dev/null
+then
+    echo "Port $PORT is already used"
+else
+   echo "Port $PORT not used"
+fi
+-------------------------------------------------
+
+
 .) tail -f server/default/log/server.log | awk '{print $2"\t"$4}'
 
 .) format json
