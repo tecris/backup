@@ -14,6 +14,10 @@
      git checkout master
      git tab -n
 
+.) delete tag
+     git tag -d v3.6.2
+     git push origin :refs/tags/v3.6.2
+
 .) show last commit
      git show
 
