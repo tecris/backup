@@ -345,6 +345,9 @@ Resource statistics for each thread of a server application.
 
 
 === T E C H N O  ===
+DNS
+  https://github.com/tianon/rawdns
+  
 Build number
   http://www.jayway.com/2012/04/07/continuous-deployment-versioning-and-git
   
