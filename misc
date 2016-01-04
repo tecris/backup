@@ -21,6 +21,9 @@
 .) show last commit
      git show
 
+.) log
+     git log --pretty=format:"%h %an %s"
+
 .) compare changes for a file between revisions:
     git diff revision_1 revision_2 -- File_name
 
