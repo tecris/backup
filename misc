@@ -405,4 +405,28 @@ OpenMQ
    http://mq.java.net
 
 Apache Qpid (Advanced Message Queueing Protocol)
-   http://qpid.apache.org/
+   http://qpid.apache.org
+   
+DNS with Docker (nice) ---
+  http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/
+
+Docker – a DNS server container ---
+  http://www.monblocnotes.com/node/2074
+
+How ubuntu:14.04.1 image is built ---
+  http://www.monblocnotes.com/node/2072
+
+Docker containers on desktop ---
+  https://blog.jessfraz.com/post/docker-containers-on-the-desktop/
+  https://github.com/jfrazelle/dockerfiles
+  
+12Factor
+  http://12factor.net/
+
+BULK
+  http://forge.jboss.org/document/hands-on-lab
+  https://blog.codecentric.de/en/2011/03/automated-acceptance-testing-using-jbehave
+  https://blog.codecentric.de/en/2012/06/jbehave-configuration-tutorial
+  http://www.thucydides.info/docs/serenity
+  http://en.wikipedia.org/wiki/Specification_by_example
+  http://www.centurylinklabs.com/tutorials/killing-your-outlook-with-docker-and-davmail
