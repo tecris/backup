@@ -342,11 +342,14 @@ Resource statistics for each thread of a server application.
 
 
 === T E C H N O  ===
+Build number
+  http://www.jayway.com/2012/04/07/continuous-deployment-versioning-and-git
+  
 Java properties
   http://owner.aeonbits.org/docs/reload/
 
 JPA - sequence generator
-  http://www.javabeat.net/jpa-annotations-generatedvalue-sequencegenerator-tablegenerator/
+  http://www.javabeat.net/jpa-annotations-generatedvalue-sequencegenerator-tablegenerator
 http://gafter.blogspot.com/2008/01/is-java-dying.html
 
 Reflecting generics
