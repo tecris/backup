@@ -340,7 +340,13 @@ Resource statistics for each thread of a server application.
  prstat -L -p 3295
 
 
+
 === T E C H N O  ===
+Java properties
+  http://owner.aeonbits.org/docs/reload/
+
+JPA - sequence generator
+  http://www.javabeat.net/jpa-annotations-generatedvalue-sequencegenerator-tablegenerator/
 http://gafter.blogspot.com/2008/01/is-java-dying.html
 
 Reflecting generics
