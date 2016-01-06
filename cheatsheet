@@ -71,23 +71,20 @@
 === M A V E N  ===
 
 .) Versions plugin. (mojohaus.org/versions-maven-plugin)
-     ..) display dependencies with newer versions available.
-           mvn versions:display-dependency-updates
-     ..) Replaces any version with the latest version.
-           mvn versions:use-latest-versions
-     ..) Sets properties to the latest versions of specific artifacts.
-           mvn versions:update-properties
+     ..) mvn versions:display-dependency-updates   # display dependencies with newer versions available.
+     ..) mvn versions:use-latest-versions          # replaces any version with the latest version.
+     ..) mvn versions:update-properties            # sets properties to the latest versions of specific artifacts.
 
 .) Dependency plugin (maven.apache.org/plugins/maven-dependency-plugin)
-     mvn dependency:tree
-     mvn dependency:analyze
+     ..) mvn dependency:tree
+     ..) mvn dependency:analyze
 
 .) Tidy Maven Plugin.(mojohaus.org/tidy-maven-plugin)
-     ..) Sort the sections of a pom.xml into the canonical order.
-           mvn tidy:pom
+     ..) mvn tidy:pom     # sort the sections of a pom.xml into the canonical order.
+           
 
 .) mojohaus.org/exec-maven-plugin
-     mvn exec:java -Dexec.mainClass=org.test.Main
+     ..) mvn exec:java -Dexec.mainClass=org.test.Main
      
 .) archetype (maven-repository.com/archetypes)
     mvn archetype:generate \
