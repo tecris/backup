@@ -74,6 +74,7 @@
      ..) mvn versions:display-dependency-updates   # display dependencies with newer versions available.
      ..) mvn versions:use-latest-versions          # replaces any version with the latest version.
      ..) mvn versions:update-properties            # sets properties to the latest versions of specific artifacts.
+.) https://www.artifact-listener.org  # email notifications when newer artifacts versions are available on Maven Central
 
 .) Dependency plugin (maven.apache.org/plugins/maven-dependency-plugin)
      ..) mvn dependency:tree
@@ -266,13 +267,13 @@ fi
     sort -R > randomsortedfile 
 
 
-=== WEBDAV ===
+=== W E B D A V ===
 
 cadaver https://demo.org/repository/experimental/org/demo/tns
 konqueror webdavs://demo.org/repository/experimental/org/demo/tns/
 
 
-=== LOG4J ===
+=== L O G 4 J ===
 www.javaworld.com/jw-11-2000/jw-1122-log4j.html
 
 The root category defaults to DEBUG, and following config are equivalent:
@@ -345,7 +346,10 @@ Tar
 Resource statistics for each thread of a server application. 
  prstat -L -p 3295
 
+=== N O D E J S ===
 
+https://github.com/angular-fullstack/generator-angular-fullstack
+https://github.com/DaftMonk/fullstack-demo
 
 === T E C H N O  ===
 DNS
