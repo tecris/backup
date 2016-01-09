@@ -66,6 +66,10 @@
     .) v2.5 - last tag
     .) 0 - number of commits since last tag
     .) deadbeef - SHA of HEAD
+    
+.) editor
+    .) git config --global core.editor "vim", or,
+    .) export GIT_EDITOR=vim
 
 Github - Bitbucket mirroring
 https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/
