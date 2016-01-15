@@ -356,7 +356,7 @@ Tar
 Resource statistics for each thread of a server application. 
  prstat -L -p 3295
 
-=== N O D E J S ===
+=== N O D E . J S ===
 
 https://github.com/angular-fullstack/generator-angular-fullstack
 https://github.com/DaftMonk/fullstack-demo
@@ -385,7 +385,9 @@ Email
   http://www.centurylinklabs.com/tutorials/killing-your-outlook-with-docker-and-davmail
 
 === T E C H N O  ===
-  
+JEE 
+  http://blog.eisele.net/2015/12/a-refresher-top-10-java-ee-7-backend.html
+
 Build number
   http://www.jayway.com/2012/04/07/continuous-deployment-versioning-and-git
   
