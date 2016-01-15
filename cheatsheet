@@ -72,7 +72,11 @@
     .) export GIT_EDITOR=vim
 
 Github - Bitbucket mirroring
-https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/
+https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository
+
+Get github repos:
+curl --silent https://api.github.com/users/tecris/repos |grep '\"git_url\"' | awk -F': "' '{print $2}' | sed -e 's/",//g'
+
 
 === M A V E N  ===
 
