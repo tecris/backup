@@ -84,7 +84,8 @@ curl --silent https://api.github.com/users/tecris/repos |grep '\"git_url\"' | aw
      ..) mvn versions:display-dependency-updates   # display dependencies with newer versions available.
      ..) mvn versions:use-latest-versions          # replaces any version with the latest version.
      ..) mvn versions:update-properties            # sets properties to the latest versions of specific artifacts.
-.) https://www.artifact-listener.org  # email notifications when newer artifacts versions are available on Maven Central
+     
+.) https://www.artifact-listener.org               # email notifications when newer artifacts versions are available on Maven Central
 
 .) Dependency plugin (maven.apache.org/plugins/maven-dependency-plugin)
      ..) mvn dependency:tree
@@ -92,7 +93,6 @@ curl --silent https://api.github.com/users/tecris/repos |grep '\"git_url\"' | aw
 
 .) Tidy Maven Plugin.(mojohaus.org/tidy-maven-plugin)
      ..) mvn tidy:pom     # sort the sections of a pom.xml into the canonical order.
-           
 
 .) mojohaus.org/exec-maven-plugin
      ..) mvn exec:java -Dexec.mainClass=org.test.Main
