@@ -11,6 +11,6 @@ git remote add bitbucket ssh://git@bitbucket.org/tecris/$REPO_NAME.git
 GIT_CONFIG=.git/config
 
 echo "" >> $GIT_CONFIG
-echo [remote "origin"] >> $GIT_CONFIG
+echo [remote \"origin\"] >> $GIT_CONFIG
 echo "    url = git@github.com:tecris/$REPO_NAME.git" >> $GIT_CONFIG
 echo "    url = ssh://git@bitbucket.org/tecris/$REPO_NAME.git" >> $GIT_CONFIG
