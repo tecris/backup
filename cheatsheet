@@ -24,6 +24,9 @@
      git tag -d old_tag
      git push origin --delete old_tag
 
+.) create branch
+    git checkout -b iss53        # create a branch and switch to it at the same time
+
 .) show last commit
      git show
 
