@@ -87,6 +87,7 @@ curl --silent https://api.github.com/users/tecris/repos |grep '\"git_url\"' | aw
      ..) mvn versions:display-dependency-updates   # display dependencies with newer versions available.
      ..) mvn versions:use-latest-versions          # replaces any version with the latest version.
      ..) mvn versions:update-properties            # sets properties to the latest versions of specific artifacts.
+     ..) mvn versions:display-plugin-updates       # displays all plugins that have newer versions available.
      
 .) https://www.artifact-listener.org               # email notifications when newer artifacts versions are available on Maven Central
 
