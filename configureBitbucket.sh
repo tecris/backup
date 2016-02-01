@@ -3,7 +3,7 @@
 # https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/
 
 
-REPO_NAME=`git remote -v|grep fetch|awk -F'\/' '{print $2}'|grep fetch|awk -F'.' '{print $1}'`
+REPO_NAME=`git remote -v|grep fetch|awk -F'/' '{print $2}'|grep fetch|awk -F'.' '{print $1}'`
 
 echo Configure $REPO_NAME
 
