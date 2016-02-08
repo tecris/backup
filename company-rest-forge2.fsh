@@ -32,3 +32,12 @@ constraint-add --onProperty email --constraint Size --max 20;
 constraint-add --onProperty telephone --constraint Size --max 20;
 
 jpa-new-field --named employee --type org.terra.company.model.Employee --relationshipType One-to-Many
+
+# one-off
+# addon-install-from-git --url https://github.com/forge/angularjs-addon.git
+
+scaffold-generate --provider AngularJS --targets org.terra.company.model.Company org.terra.company.model.Employee --generateRestResources
+
+# sed -i 's/  <\/properties>/    <wildfly.username>admin<\/wildfly.username>\n    <wildfly.password>1admin!<\/wildfly.password>\n&/' pom.xml
+
+# sed -i 's/  <\/plugins>/    <plugin>\n    <groupId>org.wildfly.plugins<\/groupId>\n   <artifactId>wildfly-maven-plugin<\/artifactId>\n   <version>1.1.0.Alpha5<\/version>\n    <configuration>\n    <port>9990<\/port>\n    <\/configuration>\n    <\/plugin>\n&/' pom.xml
