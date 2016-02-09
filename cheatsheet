@@ -256,7 +256,7 @@ fi
 .) curl (http://blogs.plexibus.com/2009/01/15/rest-esting-with-curl)
 
     -) POST
-        curl -i -H "Accept: application/json" -X POST -d "firstName=james" http://192.168.0.165/persons/person
+        $ curl -i -H "accept: application/json" -X POST -d "firstName=james" http://192.168.0.165/persons/person
 
         where,
         i - show response headers
@@ -267,17 +267,19 @@ fi
         The above command posts the first name "james" to the persons resource. Assuming the server creates a new person resource with first name of James, I also 
         tell the server to return a json representation of the newly created resource.
 
-        To send a file
-          curl --header "content-type: text/xml" -d @request.xml http://localhost:8080/ws
+      .) Send file   
+        $ curl -i -H "content-type: text/xml" -d @request.xml http://localhost:8080/ws   # send file
+      .) Send json, expect json
+        $ curl -i -H "content-type: application/json" -H "accept: application/json" -X POST -d '{"name":"Salvador","iso":"SLV"}' http://localhost:8080/rest/country
 
     -) GET
-        curl -i -H "Accept: application/json" http://192.168.0.165/persons/person/1  
+        $ curl -i -H "accept: application/json" http://192.168.0.165/persons/person/1  
 
     -) PUT
-        curl -i -H "Accept: application/json" -X PUT -d "phone=1-800-999-9999" http://192.168.0.165/persons/person/1
+        $ curl -i -H "accept: application/json" -X PUT -d "phone=1-800-999-9999" http://192.168.0.165/persons/person/1
 
     -) DELETE
-        curl -i -H "Accept: application/json" -X DELETE http://192.168.0.165/persons/person/1
+        $ curl -i -H "accept: application/json" -X DELETE http://192.168.0.165/persons/person/1
 
 .) Random shuffle a file
     shuf < inputfile > outputfile 
