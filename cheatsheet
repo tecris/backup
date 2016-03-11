@@ -461,7 +461,11 @@ Apache Qpid (Advanced Message Queueing Protocol)
    http://qpid.apache.org
   
 12Factor
-  http://12factor.net/
+  http://12factor.net
+  
+Alternative java web frameworks
+  sparkjava.com
+  ratpack.io
 
 BULK
   http://forge.jboss.org/document/hands-on-lab
