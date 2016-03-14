@@ -137,6 +137,7 @@
 
 === F O R G E ===
 forge -e "run forge_script.fsh"
+http://forge.jboss.org/document/hands-on-lab
 
 
 === G I T H U B ===
@@ -472,7 +473,6 @@ Alternative java web frameworks
   ratpack.io
 
 BULK
-  http://forge.jboss.org/document/hands-on-lab
   https://blog.codecentric.de/en/2011/03/automated-acceptance-testing-using-jbehave
   https://blog.codecentric.de/en/2012/06/jbehave-configuration-tutorial
   http://www.thucydides.info/docs/serenity
