@@ -204,10 +204,10 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
 
 ===  L I N U X  ===
 .) search and replace
-     sed -i -e 's/string1/string2/g'
+     $ sed -i -e 's/string1/string2/g'
 
 .) recursive search and replace
-     grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'
+     $ grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'
 
 .) delete recursive svn folder
      #!/bin/sh
@@ -216,8 +216,8 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
      rm -rf `find . -type d -name .svn`
 
 .) search for a file with find
-     find -iname \*lerts-properties-service.xml
-     find -iname \*lerts\*
+     $ find -iname \*lerts-properties-service.xml
+     $ find -iname \*lerts\*
 
 .) script to rename a directory
 
@@ -235,10 +235,10 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
 
 .) List The Open Ports And The Process That Owns Them
 
-    sudo lsof -i
+    $ sudo lsof -i
 ..) id using port 8080 (tcp)
-    sudo lsof -i TCP:8080
-    sudo netstat -lptu
+    $ sudo lsof -i TCP:8080
+    $ sudo netstat -lptu
 
 .) Script to check if port open
 -------------------------------------------------
@@ -256,11 +256,11 @@ fi
 .) tail -f server/default/log/server.log | awk '{print $2"\t"$4}'
 
 .) format json
-    python -mjson.tool j.txt
+    $ python -mjson.tool j.txt
 
 .) xml formating
-    xmllint --format pom.xml > a.xml
-    xmllint utility comes with libxml2-utils 
+    $ xmllint --format pom.xml > a.xml
+    $ xmllint utility comes with libxml2-utils
 
 .) curl (http://blogs.plexibus.com/2009/01/15/rest-esting-with-curl)
 
@@ -291,8 +291,11 @@ fi
         $ curl -i -H "accept: application/json" -X DELETE http://192.168.0.165/persons/person/1
 
 .) Random shuffle a file
-    shuf < inputfile > outputfile 
-    sort -R > randomsortedfile 
+    $ shuf < inputfile > outputfile
+    $ sort -R > randomsortedfile
+
+.) Check available versions for a package
+     $ sudo apt-cache policy ansible   # check available versions for ansible
 
 
 === W E B D A V ===
