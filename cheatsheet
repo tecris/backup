@@ -231,7 +231,6 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
          n=`echo $fname | sed -e "s/com/org/g"`          # Substitute 
          mv "$fname" "$n"                                # Do the actual renaming.
      done   
-     
 
 .) List The Open Ports And The Process That Owns Them
 
@@ -239,6 +238,9 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
 ..) id using port 8080 (tcp)
     $ sudo lsof -i TCP:8080
     $ sudo netstat -lptu
+
+.) SSH hardening
+     -) https://www.ibm.com/developerworks/aix/library/au-sshlocks
 
 .) Script to check if port open
 -------------------------------------------------
