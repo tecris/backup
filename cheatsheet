@@ -101,6 +101,9 @@
      ..) mvn exec:java -Dexec.mainClass=org.test.Main
      
 .) archetype (maven-repository.com/archetypes)
+
+    mvn archetype:generate -Dfilter=serenity
+
     mvn archetype:generate \
       -DgroupId=org.demo.app \
       -DartifactId=quickstart \
