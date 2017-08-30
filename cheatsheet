@@ -40,6 +40,12 @@
      git remote show origin
      git remote -v
 
+.) squash commits (http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html)
+    git rebase -i HEAD~4  # git rebase last 4 commits
+    in the next screen replace pick with squash for commits to be squashed
+    in the next screen modify comment (if desired)
+    voila
+   
 .) revert uncommitted changes
     .) revert single file
         git checkout -- filename
