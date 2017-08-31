@@ -32,6 +32,7 @@
 
 .) log
      git log --pretty=format:"%h %an %s"
+     git cherry -v master                       # show only logs from branch
 
 .) compare changes for a file between revisions:
     git diff revision_1 revision_2 -- File_name
