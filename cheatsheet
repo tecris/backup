@@ -311,6 +311,9 @@ fi
 .) Check available versions for a package
      $ sudo apt-cache policy ansible   # check available versions for ansible
 
+.) show process and wrap lines
+     $ ps aux | less -S    # use arrow keys, or Esc-( and Esc-), or Alt-( and Alt-) 
+     $ ps aux | most       # use arrow keys, or < and > (Tab can also be used to scroll right)
 
 === W E B D A V ===
 
