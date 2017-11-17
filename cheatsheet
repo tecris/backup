@@ -5,8 +5,10 @@
      git stash push -m 'ZTG-7064, 1st commit'
      git stash apply --index 0
      git stash show [-p]
-     git stash show -p > stash.diff
+     git stash show -p stash@{0} > stash.diff
      git apply stash.diff
+     git diff stash@{0}
+     git diff stash@{0} stash@{1}
 
 .) create branch
     git checkout -b iss53        # create a branch and switch to it at the same time
