@@ -1,5 +1,10 @@
 ===  G I T  ===
 
+.) stash
+     git stash list
+     git stash push -m 'ZTG-7064, 1st commit'
+     git stash apply --index 0
+
 .) clone 
      git clone git://github.com/square/java-apns.git
      git clone https://github.com/gitdivide/bookstore.git
