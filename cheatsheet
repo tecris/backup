@@ -4,10 +4,15 @@
      git stash list
      git stash push -m 'ZTG-7064, 1st commit'
      git stash apply --index 0
+     git stash show [-p]
+     git stash show -p > stash.diff
+     git apply stash.diff
 
-.) clone 
-     git clone git://github.com/square/java-apns.git
-     git clone https://github.com/gitdivide/bookstore.git
+.) create branch
+    git checkout -b iss53        # create a branch and switch to it at the same time
+
+.) squash commits
+    git merge --squash branch_name
 
 .) clone tag v3.6     
      git clone --branch v3.6 https://github.com/tecris/docker.git
@@ -29,9 +34,6 @@
      git tag -d old_tag
      git push origin --delete old_tag
 
-.) create branch
-    git checkout -b iss53        # create a branch and switch to it at the same time
-
 .) show last commit
      git show
 
@@ -45,14 +47,6 @@
 .) kind of info
      git remote show origin
      git remote -v
-
-.) squash commits
-    git merge --squash branch_name
-
-.) squash commits - complicated solution (http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html)
-    git rebase -i HEAD~4  # git rebase last 4 commits
-    in the next screen replace pick with squash for commits to be squashed
-    in the next screen modify comment (if desired)
    
 .) revert uncommitted changes
     .) revert single file
