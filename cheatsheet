@@ -3,6 +3,7 @@
 .) stash
      git stash list
      git stash push -m 'ZTG-7064, 1st commit'
+     git stash push -u -m 'ZTG-7064, 1st commit'   # untracked files stashed as well
      git stash apply --index 0
      git stash show [-p]
      git stash show -p stash@{0} > stash.diff
