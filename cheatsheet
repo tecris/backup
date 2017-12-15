@@ -60,8 +60,10 @@
         git submodule update --init
 
 .) revert local commits 
-    .) moves the current branch backward by two commits
-      git reset HEAD~2
+    .) moves the current branch backward by two commits and keep work done
+      git reset --soft HEAD~2
+    .) moves the current branch backward by two commits and deletes work done
+      git reset --head HEAD~2
 
 .) remove all files added since last commit
      git clean -fd
