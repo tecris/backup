@@ -221,6 +221,11 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
 ===  L I N U X  ===
 .) search and replace
      $ sed -i -e 's/string1/string2/g'
+     
+.) Nice sed tutorial https://gist.github.com/un33k/1162378
+
+.) # substitute "foo" with "bar" EXCEPT for lines which contain "baz"
+     $ sed '/baz/!s/foo/bar/g'
 
 .) recursive search and replace
      $ grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'
