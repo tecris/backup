@@ -2,14 +2,16 @@
 
 .) stash
      git stash list
-     git stash push -m 'ZTG-7064, 1st commit'
-     git stash push -u -m 'ZTG-7064, 1st commit'   # untracked files stashed as well
-     git stash apply --index 0
+     git stash push -m 'ZTG-7064, 1st commit'     # stash changes
+     git stash push -u -m 'ZTG-7064, 1st commit'  # untracked files stashed as well
+     git stash apply --index 0                    # apply but do not remove the state from the stash list
+     git stash drop stash@{0}                     # Remove, single, stash entry
      git stash show [-p]
      git stash show -p stash@{0} > stash.diff
      git apply stash.diff
      git diff stash@{0}
      git diff stash@{0} stash@{1}
+
 
 .) create branch
     git checkout -b iss53        # create a branch and switch to it at the same time
