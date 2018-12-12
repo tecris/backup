@@ -260,6 +260,9 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
          mv "$fname" "$n"                                # Do the actual renaming.
      done   
 
+.) Find and trace process
+   $ ps auxww | grep java
+   $ $ strace -p <pid> 
 .) List The Open Ports And The Process That Owns Them
 
     $ sudo lsof -i
