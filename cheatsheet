@@ -229,6 +229,8 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
 
 
 ===  L I N U X  ===
+.) ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf # reduce pdf file size
+
 .) search and replace
      $ sed -i -e 's/string1/string2/g'
      
