@@ -170,65 +170,11 @@ http://forge.jboss.org/document/hands-on-lab
 https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos with most stars
 
 
-===  S V N  ===
-
- .) tag
-    svn copy http://subversion/project/trunk \
-         http://subversion/project/tags/project-0.0.2 \
-         -m "Tagging the -r xx version as the X.X.X release"
-
- .) Roll back to version 15898
-    svn merge -r HEAD:15898 http://subversion/svn/project/trunk .
-
- .) Roll back to a version
-    svn merge -rXX:YY (YY is the number of the revision you want to revert to)
-
- .) Merge from trunk into
-      Merge in the current directory changes that occurred in the trunk from 
-      revision 15933 to 16026 
-        svn merge http://subversion/svn/project/trunk -r15933:16026 .
-
-.) Ignore
-    on 'svn status' ignore these files
-    ..) Create file ("a_file") with file patterns svn to ignore.
-    ..) Then run the command,
-        svn propset svn:ignore . -F file_name
-        ...) recursive
-            svn -R propset svn:ignore . -F file_name
-    ..) Edit.
-        svn propedit svn:ignore .
-
-.) Diff
-    'svn diff --diff-cmd diff -x -uw /path/to/file'
-
-.) Set svn editor
-    export SVN_EDITOR=vi
-
-.) Create svn project
-     mkdir -p test/my_project
-     cd test/my_project
-     mkdir -p trunk/my_module tags branches
-     cd ../..
-     svn import my_project http://subversion/my_project -m "First Import"
-
-.) svn copy http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
-
-.) svn move http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
-
-.) non recursive checkout
-    svn checkout --non-recursive http://svnserver/trunk/ proj
-
-.) Check modifications on server
-    svn st -u
-
-.) Show annotations (aka blame)
-    svn blame file_name
-
-.) Setting svn mime type to text
-    svn propset svn:mime-type text/plain pom.xml
-
-
 ===  L I N U X  ===
+.) SSH port forwarding
+     $ ssh -L 8888:localhost:8888 HOSTNAME
+     and then open http://localhost:8888
+
 .) ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf               # reduce pdf file size
 
 .) search and replace
@@ -523,3 +469,60 @@ BULK
   https://blog.codecentric.de/en/2012/06/jbehave-configuration-tutorial
   http://www.thucydides.info/docs/serenity
   http://en.wikipedia.org/wiki/Specification_by_example
+
+===  S V N  ===
+
+ .) tag
+    svn copy http://subversion/project/trunk \
+         http://subversion/project/tags/project-0.0.2 \
+         -m "Tagging the -r xx version as the X.X.X release"
+
+ .) Roll back to version 15898
+    svn merge -r HEAD:15898 http://subversion/svn/project/trunk .
+
+ .) Roll back to a version
+    svn merge -rXX:YY (YY is the number of the revision you want to revert to)
+
+ .) Merge from trunk into
+      Merge in the current directory changes that occurred in the trunk from 
+      revision 15933 to 16026 
+        svn merge http://subversion/svn/project/trunk -r15933:16026 .
+
+.) Ignore
+    on 'svn status' ignore these files
+    ..) Create file ("a_file") with file patterns svn to ignore.
+    ..) Then run the command,
+        svn propset svn:ignore . -F file_name
+        ...) recursive
+            svn -R propset svn:ignore . -F file_name
+    ..) Edit.
+        svn propedit svn:ignore .
+
+.) Diff
+    'svn diff --diff-cmd diff -x -uw /path/to/file'
+
+.) Set svn editor
+    export SVN_EDITOR=vi
+
+.) Create svn project
+     mkdir -p test/my_project
+     cd test/my_project
+     mkdir -p trunk/my_module tags branches
+     cd ../..
+     svn import my_project http://subversion/my_project -m "First Import"
+
+.) svn copy http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
+
+.) svn move http://subversion/svn/some_location http://subversion/svn/other_location -m 'a comment'
+
+.) non recursive checkout
+    svn checkout --non-recursive http://svnserver/trunk/ proj
+
+.) Check modifications on server
+    svn st -u
+
+.) Show annotations (aka blame)
+    svn blame file_name
+
+.) Setting svn mime type to text
+    svn propset svn:mime-type text/plain pom.xml
