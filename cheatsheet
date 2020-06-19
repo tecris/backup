@@ -13,16 +13,19 @@
      git diff stash@{0} stash@{1}
 
 .) create branch
-    git checkout -b iss53                         # create a branch and switch to it at the same time
+     git checkout -b iss53                         # create a branch and switch to it at the same time
+
+.) merge specific files from another branch
+     git checkout source_branch file_to_merge
 
 .) rename branch
-    git branch -m new_branch                      # Rename branch locally (if in the branch to be renamed)
-    git branch -m old_branch new_branch           # Rename branch locally (if not in the branch to be renamed)   
-    git push origin :old_branch                   # Delete the old branch    
-    git push --set-upstream origin new_branch     # Push the new branch, set local branch to track the new remote
+     git branch -m new_branch                      # Rename branch locally (if in the branch to be renamed)
+     git branch -m old_branch new_branch           # Rename branch locally (if not in the branch to be renamed)   
+     git push origin :old_branch                   # Delete the old branch    
+     git push --set-upstream origin new_branch     # Push the new branch, set local branch to track the new remote
 
 .) squash commits
-    git merge --squash branch_name
+     git merge --squash branch_name
 
 .) clone tag v3.6     
      git clone --branch v3.6 https://github.com/tecris/docker.git
