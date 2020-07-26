@@ -172,6 +172,8 @@ http://forge.jboss.org/document/hands-on-lab
 === G I T H U B ===
 https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos with most stars
 
+=== public ip address ===
+.) https://api.ipify.org/
 
 ===  L I N U X  ===
 .) SSH port forwarding
