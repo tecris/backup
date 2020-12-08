@@ -27,6 +27,9 @@
 .) squash commits
      git merge --squash branch_name
 
+.) checkout by date
+     git checkout `git rev-list -n 1 --first-parent --before="2020-07-27 13:37" master`
+
 .) clone tag v3.6     
      git clone --branch v3.6 https://github.com/tecris/docker.git
 
