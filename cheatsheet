@@ -179,6 +179,8 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
 .) https://api.ipify.org/
 
 ===  L I N U X  ===
+.) password
+     $ head -c32 /dev/urandom  | base64
 .) SSH port forwarding
      $ ssh -L 8888:localhost:8888 HOSTNAME
      and then open http://localhost:8888
