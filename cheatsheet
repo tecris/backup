@@ -109,6 +109,34 @@
     .) $ curl --silent https://api.github.com/users/tecris/repos |grep '\"git_url\"' | awk -F': "' '{print $2}' | sed -e 's/",//g'
 
 
+=== K U B E C T L ===
+
+$ kubectl api-resources
+$ kubectl -n fluxcd get secret
+$ kubectl -n fluxcd delete secret fluxcd-git-deploy
+$ kubectl -n rango create secret generic regcred --from-literal=username='django' --from-literal=password='!admin*f9%6#76' --dry-run=client -o yaml | kubectl apply -f -
+$ kubectl -n fluxcd create secret generic fluxcd-git-deploy --from-file=identity=./id_rsa_bitbucket --dry-run=client -o yaml | kubectl apply -f -
+$ kubectl -n rango create secret generic postgrez --from-literal=password='!admin*f9%6#76'
+$ kubectl -n rango get secret postgrez --output="jsonpath={.data.password}" | base64 -d
+$ kubectl -n rango get secret ingress-tls-cert -o json
+$ kubectl -n rango get secret ingress-tls-cert --output="jsonpath={.data.tls\.crt}" | base64 -d          # alpine
+$ kubectl -n rango get secret ingress-tls-cert --output="jsonpath={.data.tls\.crt}" | base64 --decode    # ubuntu
+
+$ kubectl -n rango get po --field-selector=status.phase=Running
+$ kubectl -n rango get po --field-selector=status.phase=Running -o name -l app=test-service | xargs kubectl -n rango describe
+
+$ kubectl -n rango rollout restart deployment test-service
+
+
+=== H E L M ===
+
+$ helm -n rango get values --revision=13 test-service
+$ helm -n rango get values --revision=24 test-service -o json |jq [.resources]
+$ helm -n rango history test-service
+$ helm -n rango list
+$ helm -n rango status test-service
+
+
 === M A V E N  ===
 
 .) Versions plugin. (mojohaus.org/versions-maven-plugin)
