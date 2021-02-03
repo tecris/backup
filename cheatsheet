@@ -213,7 +213,11 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
      $ ssh -L 8888:localhost:8888 HOSTNAME
      and then open http://localhost:8888
 
-.) ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf               # reduce pdf file size
+.) reduce pdf file size
+    .) ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
+
+.) merge pdf files
+    .) gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf a.pdf b.pdf
 
 .) search and replace
      $ sed -i -e 's/string1/string2/g'
