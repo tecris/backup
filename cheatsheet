@@ -136,6 +136,14 @@ $ helm -n rango history test-service
 $ helm -n rango list
 $ helm -n rango status test-service
 
+=== jq ===
+$ az vm list | jq -r ".[] | select(.name == \"some_name\") | .id"
+$ az vm list | jq -r ".[] | {name,id} | select(.name == \"some_name\") | .id"
+$ az vm list | jq -r ".[].name | select(startswith(\"who_am_i\"))"
+$ az vm list | jq -r ".tags.id"
+$ az vm list | jq -r ".tags | sort[] | select(startswith(\"tag_to_search\"))"
+$ az vm list | jq ".values[] | select(.display_name == \"rango here\") | {account_id}"
+
 
 === M A V E N  ===
 
