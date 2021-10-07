@@ -161,6 +161,7 @@ $ az vm list | jq ".values[] | select(.display_name == \"rango here\") | {accoun
 
 .) Dependency plugin (maven.apache.org/plugins/maven-dependency-plugin)
      ..) mvn dependency:tree
+     ..) mvn dependency:tree -Dincludes=org.springframework.kafka:spring-kafka
      ..) mvn dependency:analyze -DignoreNonCompile=true
 
 .) Tidy Maven Plugin.(mojohaus.org/tidy-maven-plugin)
