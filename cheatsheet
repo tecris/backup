@@ -301,6 +301,8 @@ fi
 
 .) xml formating
     $ xmllint --format pom.xml > a.xml
+    # by default xmllint uses 2 spaces for indentation, to specify a different level set XMLLINT_INDENT variable. For exmaple for 4 spaces use
+    $ export XMLLINT_INDENT='    ';xmllint --format pom.xml > a.xml
     $ xmllint utility comes with libxml2-utils
 
 .) curl (http://blogs.plexibus.com/2009/01/15/rest-esting-with-curl)
