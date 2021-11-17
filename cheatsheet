@@ -203,6 +203,8 @@ $ az vm list | jq ".values[] | select(.display_name == \"rango here\") | {accoun
      mvn release:clean
      mvn release:prepare
 
+.) show project version
+     $ mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec
 
 === S P R I N G ===
 .) http://start.spring.io
