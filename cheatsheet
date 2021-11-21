@@ -143,6 +143,8 @@ $ helm -n rango status test-service
 === jq ===
 $ az vm list | jq -r ".[] | select(.name == \"some_name\") | .id"
 $ az vm list | jq -r ".[] | {name,id} | select(.name == \"some_name\") | .id"
+# if above returns multiple entries(same value) and we need just one
+$ az vm list | jq -r "[.[] | {name,id} | select(.name == \"some_name\")][0] | .id"
 $ az vm list | jq -r ".[].name | select(startswith(\"who_am_i\"))"
 $ az vm list | jq -r ".tags.id"
 $ az vm list | jq -r ".tags | sort[] | select(startswith(\"tag_to_search\"))"
