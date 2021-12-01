@@ -79,6 +79,10 @@
     .) revert git submodules
         git submodule update --init
 
+.) revert 
+     git revert commit_ref_sha
+     git revert HEAD    # revert last commit
+
 .) revert local commits 
     .) moves the current branch backward by two commits and keep work done
       git reset --soft HEAD~2
