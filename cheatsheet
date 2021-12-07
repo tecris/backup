@@ -116,6 +116,8 @@
 .) Get github repos:
     .) $ curl --silent https://api.github.com/users/tecris/repos |grep '\"git_url\"' | awk -F': "' '{print $2}' | sed -e 's/",//g'
 
+=== MONOREPO ===
+https://github.com/babel/babel/blob/master/doc/design/monorepo.md
 
 === K U B E C T L ===
 
