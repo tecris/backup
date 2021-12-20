@@ -232,9 +232,16 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
 ===  L I N U X  ===
 .) password
      $ head -c32 /dev/urandom  | base64
+
 .) SSH port forwarding
      $ ssh -L 8888:localhost:8888 HOSTNAME
      and then open http://localhost:8888
+
+.) grep
+     .) OR Using \|
+          .) grep 'pattern1\|pattern2' filename
+     .) NOT using grep -v
+          .) grep -v 'pattern1' filename
 
 .) reduce pdf file size
     .) ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
