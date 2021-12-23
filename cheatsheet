@@ -214,10 +214,6 @@ $ az vm list | jq ".values[] | select(.display_name == \"rango here\") | {accoun
 .) show project version
      $ mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec
 
-=== S P R I N G ===
-.) http://start.spring.io
-
-
 === F O R G E ===
 forge -e "run forge_script.fsh"
 http://forge.jboss.org/document/hands-on-lab
@@ -230,6 +226,8 @@ https://github.com/search?q=stars:%3E1&s=stars&type=Repositories   // show repos
 .) https://api.ipify.org/
 
 ===  L I N U X  ===
+.) xargs basics -> https://shapeshed.com/unix-xargs/
+
 .) password
      $ head -c32 /dev/urandom  | base64
 
