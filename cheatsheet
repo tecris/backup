@@ -359,6 +359,12 @@ fi
      $ ps aux | less -S    # use arrow keys, or Esc-( and Esc-), or Alt-( and Alt-) 
      $ ps aux | most       # use arrow keys, or < and > (Tab can also be used to scroll right)
 
+.) disk space
+    $ du -sh ./* | sort -h
+    $ df -h
+    $ lsblk
+    $ ncdu
+
 === W E B D A V ===
 
 cadaver https://demo.org/repository/experimental/org/demo/tns
@@ -453,6 +459,7 @@ https://www.npmjs.com/about
 === D O C K E R ===
 DNS
   https://github.com/tianon/rawdns
+
 DNS with Docker (nice) ---
   http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/
 
