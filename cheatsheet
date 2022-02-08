@@ -79,6 +79,12 @@
     .) revert git submodules
         git submodule update --init
 
+.) revert the reverted merge (https://www.drupaldump.com/gitlab-revert-reverted-merge)
+     git pull master 
+     git checkout -b new_branch
+     git revert -m 1 37dsd67a48
+
+     
 .) revert 
      git revert commit_ref_sha
      git revert HEAD    # revert last commit
