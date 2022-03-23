@@ -46,7 +46,7 @@
 
 .) delete tag
      git tag -d v3.6.2
-     git push origin --delete v3.6.2
+     git push origin -d v3.6.2
 
 .) rename tag
      git tag new_tag old_tag
