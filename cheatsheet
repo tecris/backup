@@ -19,6 +19,12 @@
      git push -d origin <branch_name>    # delete remote branch
      git branch -d <branch_name>         # delete local branch
 
+.) prune branches (deleting references to non-existing remote branches)
+     git remote prune origin
+     - where origin comes from ...
+     $ git remote -v
+     $ origin  https://gitserver.com/user/repository.git (fetch)
+     
 .) rename branch
      git branch -m new_branch                      # Rename branch locally (if in the branch to be renamed)
      git branch -m old_branch new_branch           # Rename branch locally (if not in the branch to be renamed)   
