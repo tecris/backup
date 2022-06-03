@@ -69,6 +69,7 @@
      git log --name-status                        # full path names and status of changed files
      git log --name-only                          # full path names of changed files
      git log --stat                               # abbreviated pathnames and a diffstat of changed files
+     git log --oneline                            # show one line only 
 
 .) compare changes for a file between revisions:
     git diff revision_1 revision_2 -- File_name
