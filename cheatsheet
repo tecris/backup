@@ -91,7 +91,12 @@
      git checkout -b new_branch
      git revert -m 1 37dsd67a48
 
-     
+.) remove last commit
+  .) remove a commit done locally
+     git reset --soft HEAD^
+  .) remove a commit already pushed
+     git revert <commit-hash>
+   
 .) revert 
      git revert commit_ref_sha
      git revert HEAD    # revert last commit
