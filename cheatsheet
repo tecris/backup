@@ -44,6 +44,7 @@
      git clone --branch v3.6 https://github.com/tecris/docker.git
 
 .) tag (http://git-scm.com/book/en/v2/Git-Basics-Tagging)
+     git tag -a <tag_name> <commit_sha> -m 'message'
      git tag -a v0.1.2 -m 'tag v0.1.2'
      git push origin v0.1.2
      git checkout tags/v0.1.2
