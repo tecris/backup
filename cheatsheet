@@ -49,8 +49,8 @@
      git push origin v0.1.2
      git checkout tags/v0.1.2
      git checkout master
-     git tag -n                    # show description
-     git ls-remote --tags origin   # show git sha
+     git tag -n                         # show description
+     git ls-remote --tags --ref origin  # show git sha
 
 .) delete tag
      git tag -d v3.6.2
