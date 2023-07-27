@@ -12,8 +12,9 @@
      git diff stash@{0}
      git diff stash@{0} stash@{1}
 
-.) create branch
-     git checkout -b iss53                         # create a branch and switch to it at the same time
+.) create branch (and switch to it at the same time)
+     git switch -c iss53
+     git checkout -b iss53
 
 .) delete branch
      git push -d origin <branch_name>    # delete remote branch
@@ -34,8 +35,10 @@
 .) merge specific files from another branch
      git checkout --patch source_branch file_to_merge
 
-.) squash commits
+.) merge squash commits 
+     git switch main
      git merge --squash branch_name
+     git commit
 
 .) checkout by date
      git checkout `git rev-list -n 1 --first-parent --before="2020-07-27 13:37" master`
