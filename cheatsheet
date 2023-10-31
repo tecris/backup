@@ -37,8 +37,9 @@
 
 .) merge squash commits 
      git switch main
-     git merge --squash branch_name
-     git commit
+
+.) merge ignore white space
+     git merge -Xignore-space-change branch_name
 
 .) checkout by date
      git checkout `git rev-list -n 1 --first-parent --before="2020-07-27 13:37" master`
