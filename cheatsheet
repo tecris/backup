@@ -36,7 +36,7 @@
      git checkout --patch source_branch file_to_merge
 
 .) merge squash commits 
-     git switch main
+     git merge --squash branch_name
 
 .) merge ignore white space
      git merge -Xignore-space-change branch_name
