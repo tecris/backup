@@ -32,6 +32,9 @@
      git push origin :old_branch                   # Delete the old branch    
      git push --set-upstream origin new_branch     # Push the new branch, set local branch to track the new remote
 
+.) show all commits on all branches that aren't pushed yet 
+     git log --branches --not --remotes
+
 .) merge specific files from another branch
      git checkout --patch source_branch file_to_merge
 
