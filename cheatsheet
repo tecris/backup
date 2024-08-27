@@ -34,6 +34,9 @@
 
 .) show all commits on all branches that aren't pushed yet 
      git log --branches --not --remotes
+     git log --branches --not --remotes --simplify-by-decoration --decorate --oneline
+     # to push changes from all branches
+     git push --all
 
 .) merge specific files from another branch
      git checkout --patch source_branch file_to_merge
