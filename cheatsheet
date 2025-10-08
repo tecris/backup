@@ -59,6 +59,8 @@
      git checkout master
      git show v0.1.2                    # show tag data 
      git tag -n                         # show tag message (for annotated tags)
+     # List Git tags with creation date and tag message (if annotated)
+     git for-each-ref --sort=creatordate   --format='%(creatordate:short) %(refname:short): %(contents)'   refs/tags
      git ls-remote --tags --ref origin  # show tag git sha
 
 .) delete tag
